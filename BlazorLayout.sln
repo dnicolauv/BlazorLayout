@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorLayoutTests", "BlazorLayoutTests\BlazorLayoutTests.csproj", "{E2552834-5034-45A0-A05B-5CD4A487077F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorLayout", "BlazorLayout\BlazorLayout.csproj", "{EFA6B086-582D-4425-8CA2-E2329171C47E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E2552834-5034-45A0-A05B-5CD4A487077F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2552834-5034-45A0-A05B-5CD4A487077F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2552834-5034-45A0-A05B-5CD4A487077F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2552834-5034-45A0-A05B-5CD4A487077F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFA6B086-582D-4425-8CA2-E2329171C47E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFA6B086-582D-4425-8CA2-E2329171C47E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFA6B086-582D-4425-8CA2-E2329171C47E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFA6B086-582D-4425-8CA2-E2329171C47E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {84100DC8-BEA3-4CCB-BC12-B1F2BCD6DF02}
+	EndGlobalSection
+EndGlobal

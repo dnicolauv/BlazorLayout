@@ -1,0 +1,101 @@
+﻿<div class="flex @flexDirection @flexWrap @flexGrow @flexShrink @flexElasticity 
+                 @horizontalAlign @verticalAlign @selfVerticalAlign
+                 @horizontalSpacing @verticalSpacing @order @cssClass">
+    @ChildContent
+</div>
+
+@code {
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public Utilities.FlexDirection Direction { get; set; } = Utilities.FlexDirection.Row;
+    [Parameter] public Utilities.FlexWrap? Wrap { get; set; } = null;
+    [Parameter] public Utilities.FlexGrow? Grow { get; set; } = null;
+    [Parameter] public Utilities.FlexShrink? Shrink { get; set; } = null;
+    [Parameter] public Utilities.FlexElasticity? Elasticity { get; set; } = null;
+
+    [Parameter] public Utilities.FlexHorizontalAlign? HorizontalAlign { get; set; } = null;
+    [Parameter] public Utilities.FlexVerticalAlign? VerticalAlign { get; set; } = null;
+    [Parameter] public Utilities.FlexVerticalAlign? SelfVerticalAlign { get; set; } = null;
+
+    [Parameter] public string @class { get; set; }
+
+    [Parameter] public int? HorizontalSpacing { get; set; }
+    [Parameter] public int? VerticalSpacing { get; set; }
+    [Parameter] public int? Order { get; set; } = null;
+
+    private string flexDirection => Direction switch
+    {
+        Utilities.FlexDirection.Row => "flex-row",
+        Utilities.FlexDirection.Col => "flex-col",
+        Utilities.FlexDirection.RowReverse => "flex-row-reverse",
+        Utilities.FlexDirection.ColReverse => "flex-col-reverse",
+        _ => null,
+    };
+
+    private string flexWrap => Wrap switch
+    {
+        Utilities.FlexWrap.Wrap => "flex-row",
+        Utilities.FlexWrap.WrapReverse => "flex-col",
+        Utilities.FlexWrap.NoWrap => "flex-row-reverse",
+        _ => null,
+    };
+
+    private string flexGrow => Grow switch
+    {
+        Utilities.FlexGrow.Grow => "flex-grow",
+        Utilities.FlexGrow.None => "flex-grow-0",
+        _ => null,
+    };
+
+    private string flexShrink => Shrink switch
+    {
+        Utilities.FlexShrink.Shrink => "flex-shrink",
+        Utilities.FlexShrink.None => "flex-shrink-0",
+        _ => null,
+    };
+
+    private string flexElasticity => Elasticity switch
+    {
+        Utilities.FlexElasticity.Auto => "flex-auto",
+        Utilities.FlexElasticity.None => "flex-none",
+        Utilities.FlexElasticity.ShrinkAndGrow => "flex-1",
+        Utilities.FlexElasticity.ShrinkNotGrow => "flex-initial",
+        _ => null,
+    };
+
+    private string horizontalAlign => HorizontalAlign switch
+    {
+        Utilities.FlexHorizontalAlign.Start => "justify-start",
+        Utilities.FlexHorizontalAlign.End => "justify-end",
+        Utilities.FlexHorizontalAlign.Center => "justify-center",
+        Utilities.FlexHorizontalAlign.Between => "justify-between",
+        Utilities.FlexHorizontalAlign.Around => "justify-around",
+        Utilities.FlexHorizontalAlign.Evenly => "justify-evenly",
+        _ => null,
+    };
+
+    private string verticalAlign => VerticalAlign switch
+    {
+        Utilities.FlexVerticalAlign.Start => "items-start",
+        Utilities.FlexVerticalAlign.End => "items-end",
+        Utilities.FlexVerticalAlign.Center => "items-center",
+        Utilities.FlexVerticalAlign.Baseline => "items-baseline",
+        Utilities.FlexVerticalAlign.Stretch => "items-stretch",
+        _ => null,
+    };
+
+    private string selfVerticalAlign => SelfVerticalAlign switch
+    {
+        Utilities.FlexVerticalAlign.Start => "self-start",
+        Utilities.FlexVerticalAlign.End => "self-end",
+        Utilities.FlexVerticalAlign.Center => "self-center",
+        Utilities.FlexVerticalAlign.Auto => "self-auto",
+        Utilities.FlexVerticalAlign.Stretch => "self-stretch",
+        _ => null,
+    };
+
+    private string horizontalSpacing => HorizontalSpacing.HasValue ? $"space-x-{HorizontalSpacing}" : null;
+    private string verticalSpacing => VerticalSpacing.HasValue ? $"space-x-{VerticalSpacing}" : null;
+    private string order => Order.HasValue ? $"order-{Order}" : null;
+
+    private string cssClass => this.@class;
+}
